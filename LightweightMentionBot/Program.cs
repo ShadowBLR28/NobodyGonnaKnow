@@ -60,8 +60,13 @@ namespace LightweightMentionBot
             }
 
             var messageType = update.Type;
-
             if (messageType != UpdateType.Message && messageType != UpdateType.EditedMessage)
+            {
+                return;
+            }
+
+            var chatType = update.Message.Chat.Type;
+            if(chatType!= ChatType.Supergroup)
             {
                 return;
             }
