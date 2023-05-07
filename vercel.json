@@ -1,0 +1,6 @@
+{
+    "builds": [
+        { "src": "PurpleSpamBot.SpamDetector/PurpleSpamBot.SpamDetector.csproj", "use": "@vercel/dotnet" },
+      { "src": "LightweightMentionBot/LightweightMentionBot.csproj", "use": "@vercel/dotnet" }
+    ]
+  }
