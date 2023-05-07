@@ -13,14 +13,14 @@ namespace LightweightMentionBot
         public static void Main(string[] args)
         {
             var token = Environment.GetEnvironmentVariable("TELEGRAM_BOT_TOKEN");
-            DateTime LastWorkingTime = DateTime.MinValue;
+            //DateTime LastWorkingTime = DateTime.MinValue;
 
             IConfiguration config = new ConfigurationBuilder()
                     .AddJsonFile("appsettings.json", false, true).Build();
 
-            var rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            var workingTime = System.IO.File.ReadAllText(Path.Combine(rootDirectory, "LastWorkingTime.txt"));
-            DateTime.TryParse(workingTime, out LastWorkingTime);
+            //var rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            //var workingTime = System.IO.File.ReadAllText(Path.Combine(rootDirectory, "LastWorkingTime.txt"));
+            //DateTime.TryParse(workingTime, out LastWorkingTime);
 
             BotConfiguration = config.GetRequiredSection("BotConfiguration").Get<BotConfiguration>();
             var cancellationToken = new CancellationTokenSource();
